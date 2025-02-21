@@ -17,22 +17,35 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
-    
+
     <style>
+      /* General Styles */
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #1a1a1a;
+        color: white;
+      }
+
+      h1 {
+        color: #f9bf3f;
+      }
+
+      /* Section Styling */
+      .colorlib-section {
+        padding: 50px 0;
+      }
+
       /* GitHub Profile Card */
       .github-card {
-        background: linear-gradient(145deg, #d4af37, #b8860b); /* Golden gradient */
+        background: linear-gradient(145deg, #d4af37, #b8860b);
         color: #222;
         border-radius: 8px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         padding: 20px;
-        margin: 20px auto;
         text-align: center;
         transition: transform 0.3s, box-shadow 0.3s;
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        width: 300px;
       }
 
       .github-card.visible {
@@ -49,11 +62,6 @@
       .github-card h3 {
         font-size: 18px;
         font-weight: bold;
-      }
-
-      .github-card p {
-        font-size: 14px;
-        margin-bottom: 10px;
       }
 
       .github-card a {
@@ -73,7 +81,7 @@
       /* Education Section */
       .education-card {
         background: #222;
-        border-left: 5px solid #f9bf3f; /* Golden left border */
+        border-left: 5px solid #f9bf3f;
         padding: 20px;
         border-radius: 8px;
         margin-bottom: 20px;
@@ -87,21 +95,6 @@
       .education-card.visible {
         opacity: 1;
         transform: translateY(0);
-      }
-
-      .education-card h2 {
-        margin: 0;
-        font-size: 20px;
-        color: #f9bf3f;
-      }
-
-      .education-card p {
-        margin: 5px 0;
-        font-size: 14px;
-      }
-
-      .education-card strong {
-        color: #f9bf3f;
       }
     </style>
   </head>
@@ -119,7 +112,29 @@
         </aside>
 
         <div id="colorlib-main">
-          <section class="colorlib-education" data-section="education">
+          <!-- About Section -->
+          <section class="colorlib-section" id="about">
+            <div class="colorlib-narrow-content">
+              <h1>About</h1>
+              <p>Hi, I'm <strong>Abhishek V</strong>, a B.Tech student passionate about software development, cybersecurity, and exploring new technologies.</p>
+            </div>
+          </section>
+
+          <!-- Skills Section -->
+          <section class="colorlib-section" id="skills">
+            <div class="colorlib-narrow-content">
+              <h1>Skills</h1>
+              <ul>
+                <li>JavaScript</li>
+                <li>C Programming</li>
+                <li>Python</li>
+                <li>Database Management (DBMS)</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Education Section -->
+          <section class="colorlib-section" id="education">
             <div class="colorlib-narrow-content">
               <h1>Education</h1>
 
@@ -127,15 +142,29 @@
                 <h2>Government Engineering College, Idukki</h2>
                 <p><strong>Degree:</strong> B.Tech in Information Technology</p>
                 <p><strong>Year:</strong> 2023 - 2027</p>
-                <p><strong>Focus:</strong> Cybersecurity & Software Development</p>
               </div>
 
               <div class="education-card">
                 <h2>KPRP HSS, Kongad</h2>
                 <p><strong>Stream:</strong> Biology Science</p>
                 <p><strong>Year:</strong> 2020 - 2022</p>
-                <p><strong>Key Subjects:</strong> Physics, Chemistry, Biology, Mathematics</p>
               </div>
+            </div>
+          </section>
+
+          <!-- GitHub Profile Section -->
+          <section class="colorlib-section" id="github">
+            <div class="colorlib-narrow-content">
+              <h1>GitHub Profile</h1>
+              <div class="github-card" id="github-profile"></div>
+            </div>
+          </section>
+
+          <!-- Contact Section -->
+          <section class="colorlib-section" id="contact">
+            <div class="colorlib-narrow-content">
+              <h1>Contact</h1>
+              <p>Email: <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong></p>
             </div>
           </section>
         </div>
@@ -165,9 +194,8 @@
           })
           .catch(error => console.error("Error fetching GitHub profile:", error));
 
-        // Add animation to education cards
-        const educationCards = document.querySelectorAll(".education-card");
-        educationCards.forEach((card, index) => {
+        // Animate education cards
+        document.querySelectorAll(".education-card").forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("visible");
           }, index * 300);
