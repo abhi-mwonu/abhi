@@ -221,26 +221,26 @@
     <script src="js/main.js"></script>
     
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
-          .then(response => response.json())
-          .then(data => {
-            const reposContainer = document.getElementById("repos");
-            if (!reposContainer) return;
+      ///document.addEventListener("DOMContentLoaded", function () {
+   ///     fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
+        ///  .then(response => response.json())
+      ///    .then(data => {
+        ///    const reposContainer = document.getElementById("repos");
+         ///   if (!reposContainer) return;
 
-            data.forEach(repo => {
-              const repoItem = document.createElement("li");
-              repoItem.innerHTML = `
-                <a href="${repo.html_url}" target="_blank">
-                  <h3>${repo.name}</h3>
-                  <p>${repo.description || "No description available."}</p>
-                </a>
-              `;
-              reposContainer.appendChild(repoItem);
-            });
-          })
-          .catch(error => console.error("Error fetching repositories:", error));
-      });
+        ///    data.forEach(repo => {
+          ///    const repoItem = document.createElement("li");
+           ///   repoItem.innerHTML = `
+            ///    <a href="${repo.html_url}" target="_blank">
+             ///     <h3>${repo.name}</h3>
+             ///     <p>${repo.description || "No description available."}</p>
+             ///   </a>
+           ///   `;
+           ////   reposContainer.appendChild(repoItem);
+          ///  });
+      ////    })
+        ///  .catch(error => console.error("Error fetching repositories:", error));
+   ///   });
     </script>
   </body>
 </html>
