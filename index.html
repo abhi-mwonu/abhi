@@ -1,163 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Abhishek V - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio webpage of Abhishek V" />
+    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
+    <meta name="author" content="Abhishek V" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <style>
+      /* Styling for profile cards */
+      .profile-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .profile-card {
+        width: 300px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ffdd99, #f9bf3f);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .profile-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .profile-card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+
+      .profile-card h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .profile-card p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-    </script>
-</head>
-<body>
-    <!-- Sidebar -->
-    <aside id="colorlib-aside">
-        <div class="author-img">
-            <img src="profile.jpg" alt="Profile Picture">
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="colorlib-page">
+      <div class="container-wrap">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"
+          data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <i></i>
+        </a>
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
+          <div class="text-center">
+            <div class="author-img">
+              <img alt="profile-img" src="./logo.png" />
+            </div>
+            <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
+          </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
+            <div id="navbar" class="collapse">
+              <ul>
+                <li><a href="#" data-nav-section="about">About</a></li>
+                <li><a href="#" data-nav-section="skills">Skills</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+
+        <div id="colorlib-main">
+          
+          <!-- About Section -->
+          <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content fade-in">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>About</h1>
+                  <p>
+                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
+                    <strong>Information Technology</strong>. Passionate about 
+                    software development, cybersecurity, and exploring new 
+                    technologies. I love building projects, solving problems, 
+                    and continuously learning.
+                  </p>
+                </div>
+              </div>
+
+              <!-- GitHub Profile Card -->
+              <div class="profile-container fade-in">
+                <div class="github-card profile-card" username="abhishekV"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills Section -->
+          <section class="colorlib-skills" data-section="skills">
+            <div class="colorlib-narrow-content fade-in">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Skills</h1>
+                  <div class="profile-container">
+                    <div class="profile-card">JavaScript</div>
+                    <div class="profile-card">C Programming</div>
+                    <div class="profile-card">Python</div>
+                    <div class="profile-card">Database Management</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education Section -->
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content fade-in">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+                <div class="profile-container">
+                  <div class="profile-card">
+                    <h3>Government Engineering College, Idukki</h3>
+                    <p><strong>B.Tech in Information Technology</strong></p>
+                    <p>2023 - 2027</p>
+                    <p>Currently pursuing a Bachelor of Technology in IT, focusing on Cybersecurity.</p>
+                  </div>
+                  <div class="profile-card">
+                    <h3>KPRP HSS, Kongad</h3>
+                    <p><strong>Higher Secondary - Biology Science</strong></p>
+                    <p>2020 - 2022</p>
+                    <p>Completed Higher Secondary education with a focus on Biology Science.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
         </div>
-        <h1 id="colorlib-logo"><a href="#">Your Name</a></h1>
-        <span class="position">Web Developer | Cybersecurity Enthusiast</span>
-
-        <nav id="colorlib-main-menu">
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="colorlib-footer">
-            <h3>Follow Me</h3>
-            <ul>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">GitHub</a></li>
-            </ul>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <div id="colorlib-main">
-        <!-- Hero Section -->
-        <section id="colorlib-hero">
-            <div class="slider-text">
-                <div class="slider-text-inner">
-                    <h1>Hi, I'm <span>ABHISHEK V</span></h1>
-                    <h2>Building creative and secure web applications</h2>
-                    <button onclick="toggleDarkMode()" class="btn">Toggle Dark Mode</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="colorlib-about">
-            <div class="colorlib-narrow-content">
-                <h2 class="colorlib-heading">About Me</h2>
-                <p>Hello! I'm a passionate Web Developer with a keen interest in Cybersecurity and Software Development. I love solving problems, building secure applications, and learning new technologies.</p>
-                <img src="about.jpg" alt="About Me Image" class="about-img">
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-card">
-                <h3>B.Tech in Information Technology</h3>
-                <p>Government Engineering College, Idukki | 2023 - 2027</p>
-            </div>
-            <div class="education-card">
-                <h3>Higher Secondary (Biology Science)</h3>
-                <p>KPRP HSS, Kongad | 2020 - 2022</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Web Development (HTML, CSS, JavaScript, React, Node.js)</li>
-                <li>Cybersecurity Fundamentals</li>
-                <li>Database Management (MySQL, MongoDB)</li>
-                <li>Programming Languages (Python, Java, C++)</li>
-                <li>Operating Systems (Linux, Windows)</li>
-                <li>Version Control (Git, GitHub)</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="profile-cards">
-                <div class="project">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Secure Web Application</h3>
-                        <p>A web app with strong security measures implemented.</p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-image">
-                        <img src="project2.jpg" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Network Security Tool</h3>
-                        <p>A tool for scanning and securing networks.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="experience-card">
-                <h3>Cybersecurity Interest Group Lead</h3>
-                <p>IEDC, Government Engineering College, Idukki</p>
-                <p>Leading a team of cybersecurity enthusiasts to conduct workshops, CTFs, and awareness programs.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Freelance Web Developer</h3>
-                <p>Developing websites and web applications for clients.</p>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <ul class="certifications-list">
-                <li>Certified Ethical Hacker (CEH) - [Institute Name]</li>
-                <li>Google Cybersecurity Professional Certificate</li>
-                <li>IBM Cybersecurity Analyst Certificate</li>
-            </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="colorlib-contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations or job opportunities!</p>
-            <form>
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-        <!-- Footer -->
-        <footer id="colorlib-footer2">
-            <h2>Thanks for Visiting</h2>
-            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
-        </footer>
+      </div>
     </div>
-</body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+
+  </body>
 </html>
