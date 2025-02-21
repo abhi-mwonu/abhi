@@ -92,22 +92,6 @@
             </div>
           </section>
           
-          <!-- Skills Section -->
-          <section class="colorlib-skills" data-section="skills">
-            <div class="colorlib-narrow-content">
-              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>Skills</h1>
-                  <ul>
-                    <li>JavaScript, C Programming</li>
-                    <li>Python</li>
-                    <li>DBMS</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section class="colorlib-education" data-section="education">
             <div class="colorlib-narrow-content">
               <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
@@ -129,8 +113,7 @@
             </div>
           </section>
 
-          <!-- GitHub Top Repositories Section -->
-          <section class="colorlib-repos no-print" data-section="repos">
+          <section class="colorlib-experience no-print" data-section="repos">
             <div class="colorlib-narrow-content">
               <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
@@ -164,7 +147,7 @@
               </div>
             </div>
           </section>
-          
+
           <section class="colorlib-footer no-print" data-section="footer">
             <div class="colorlib-narrow-content">
               <footer class="footer" id="footer"></footer>
@@ -173,8 +156,33 @@
         </div>
       </div>
     </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
+          .then(response => response.json())
+          .then(data => {
+            const reposContainer = document.getElementById("repos");
+            if (!reposContainer) return;
+
+            data.forEach(repo => {
+              const repoItem = document.createElement("li");
+              repoItem.innerHTML = `
+                <a href="${repo.html_url}" target="_blank">
+                  <h3>${repo.name}</h3>
+                  <p>${repo.description || "No description available."}</p>
+                </a>
+              `;
+              reposContainer.appendChild(repoItem);
+            });
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
+      });
+    </script>
+
   </body>
 </html>
