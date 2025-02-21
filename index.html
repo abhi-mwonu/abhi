@@ -15,57 +15,63 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <script src="js/modernizr-2.6.2.min.js"></script>
+    <script type="module" src="index.js"></script>
+    <script src="js/profile-card.js"></script>
+    
     <style>
-      /* Golden-themed styles */
-      .education-card, .skill-card {
-        background: linear-gradient(145deg, #d4af37, #b8860b); /* Rich golden gradient */
-        color: #222; /* Dark text for readability */
+      /* GitHub Profile Card */
+      .github-card {
+        background: linear-gradient(145deg, #d4af37, #b8860b); /* Golden gradient */
+        color: #222;
         border-radius: 8px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        margin: 10px;
+        padding: 20px;
+        margin: 20px auto;
         text-align: center;
         transition: transform 0.3s, box-shadow 0.3s;
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        width: 300px;
       }
 
-      .education-card:hover, .skill-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 5px 15px rgba(218, 165, 32, 0.5); /* Enhanced gold glow */
-      }
-
-      .education-container, .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .education-card h2, .skill-card h2 {
-        font-size: 18px;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
-
-      .education-card p, .skill-card p {
-        font-size: 14px;
-        margin: 4px 0;
-      }
-
-      .skill-card {
-        width: 150px;
-        padding: 10px;
-        font-size: 14px;
-      }
-
-      /* Fade-in animation */
-      .fade-in.visible {
+      .github-card.visible {
         opacity: 1;
         transform: translateY(0);
       }
+
+      .github-card img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .github-card h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .github-card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .github-card a {
+        display: inline-block;
+        color: #222;
+        text-decoration: none;
+        background: #f9bf3f;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .github-card a:hover {
+        background: #e0a800;
+      }
     </style>
   </head>
+
   <body>
     <div id="colorlib-page">
       <div class="container-wrap">
@@ -76,80 +82,64 @@
             </div>
             <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
           </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar">
+            <ul>
+              <li><a href="#" data-nav-section="about">About</a></li>
+              <li><a href="#" data-nav-section="skills">Skills</a></li>
+              <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+              <li><a href="#" data-nav-section="education">Education</a></li>
+              <li><a href="#" data-nav-section="contact">Contact</a></li>
+            </ul>
+          </nav>
         </aside>
+
         <div id="colorlib-main">
-          
           <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
-              <div class="row animate-box">
-                <div class="about-desc">
-                  <h1>About</h1>
-                  <p>
-                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
-                    <strong>Information Technology</strong>. Passionate about 
-                    software development, cybersecurity, and exploring new 
-                    technologies.
-                  </p>
-                </div>
-              </div>
+              <h1>About</h1>
+              <p>
+                Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
+                <strong>Information Technology</strong>. Passionate about 
+                software development, cybersecurity, and exploring new 
+                technologies.
+              </p>
             </div>
           </section>
 
-          <section class="colorlib-skills fade-in" data-section="skills">
+          <section class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
-              <div class="row animate-box">
-                <div class="about-desc">
-                  <h1>Skills</h1>
-                </div>
-                <div class="skills-container">
-                  <div class="skill-card fade-in"><h2>JavaScript</h2></div>
-                  <div class="skill-card fade-in"><h2>C Programming</h2></div>
-                  <div class="skill-card fade-in"><h2>Python</h2></div>
-                  <div class="skill-card fade-in"><h2>DBMS</h2></div>
-                </div>
-              </div>
+              <h1>Skills</h1>
+              <ul>
+                <li>⦿ JavaScript</li>
+                <li>⦿ C Programming</li>
+                <li>⦿ Python</li>
+                <li>⦿ Database Management (DBMS)</li>
+              </ul>
             </div>
           </section>
 
-          <section class="colorlib-education fade-in" data-section="education">
+          <section class="colorlib-profile" data-section="profile-card">
             <div class="colorlib-narrow-content">
-              <div class="row animate-box">
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-                <div class="education-container">
-                  <div class="education-card fade-in">
-                    <h2>Government Engineering College, Idukki</h2>
-                    <p><strong>B.Tech in Information Technology</strong></p>
-                    <p>2023 - 2027</p>
-                    <p>Currently pursuing a Bachelor of Technology in Information Technology, focusing on Cybersecurity.</p>
-                  </div>
-                  <div class="education-card fade-in">
-                    <h2>KPRP HSS, Kongad</h2>
-                    <p><strong>Higher Secondary Education - Biology Science</strong></p>
-                    <p>2020 - 2022</p>
-                    <p>Completed Higher Secondary education with a focus on Biology Science.</p>
-                  </div>
-                </div>
-              </div>
+              <h1>GitHub Profile</h1>
+              <div class="github-card" id="github-profile"></div>
+            </div>
+          </section>
+
+          <section class="colorlib-repos" data-section="repos">
+            <div class="colorlib-narrow-content">
+              <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
+              <ul id="repos"></ul>
             </div>
           </section>
 
           <section class="colorlib-contact" data-section="contact">
             <div class="colorlib-narrow-content">
-              <div class="row row-bottom-padded-sm animate-box">
-                <div class="about-desc">
-                  <h1>Contact</h1>
-                </div>
-                <p>
-                  Feel free to email me at 
-                  <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
-                  for tech discussions, collaborations, or any inquiries.
-                </p>
-              </div>
+              <h1>Contact</h1>
+              <p>
+                Email me at <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
+              </p>
             </div>
           </section>
-          
         </div>
       </div>
     </div>
@@ -157,22 +147,44 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const fadeInElements = document.querySelectorAll(".fade-in");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
+        const githubUsername = "abhi-mwonu";
+        const githubProfile = document.getElementById("github-profile");
+        const reposContainer = document.getElementById("repos");
+
+        // Fetch GitHub Profile Data
+        fetch(`https://api.github.com/users/${githubUsername}`)
+          .then(response => response.json())
+          .then(data => {
+            githubProfile.innerHTML = `
+              <img src="${data.avatar_url}" alt="GitHub Avatar">
+              <h3>${data.name || githubUsername}</h3>
+              <p>${data.bio || "Passionate about coding & cybersecurity."}</p>
+              <a href="${data.html_url}" target="_blank">View Profile</a>
+            `;
+            githubProfile.classList.add("visible");
+          })
+          .catch(error => console.error("Error fetching GitHub profile:", error));
+
+        // Fetch Repositories
+        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(repo => {
+              const repoItem = document.createElement("li");
+              repoItem.innerHTML = `
+                <a href="${repo.html_url}" target="_blank">
+                  <h3>${repo.name}</h3>
+                  <p>${repo.description || "No description available."}</p>
+                </a>
+              `;
+              reposContainer.appendChild(repoItem);
             });
-          },
-          { threshold: 0.2 }
-        );
-        fadeInElements.forEach((el) => observer.observe(el));
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
       });
     </script>
-
   </body>
 </html>
