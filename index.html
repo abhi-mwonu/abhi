@@ -17,91 +17,15 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
-
-    <style>
-      /* General Styles */
-      body {
-        font-family: "Montserrat", sans-serif;
-        background: #1a1a1a;
-        color: white;
-      }
-
-      h1 {
-        color: #f9bf3f;
-      }
-
-      /* Section Styling */
-      .colorlib-section {
-        padding: 50px 0;
-      }
-
-      /* GitHub Profile Card */
-      .github-card {
-        background: linear-gradient(145deg, #d4af37, #b8860b);
-        color: #222;
-        border-radius: 8px;
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.3s, box-shadow 0.3s;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .github-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .github-card img {
-        width: 100px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-      }
-
-      .github-card h3 {
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .github-card a {
-        display: inline-block;
-        color: #222;
-        text-decoration: none;
-        background: #f9bf3f;
-        padding: 8px 15px;
-        border-radius: 5px;
-        font-weight: bold;
-      }
-
-      .github-card a:hover {
-        background: #e0a800;
-      }
-
-      /* Education Section */
-      .education-card {
-        background: #222;
-        border-left: 5px solid #f9bf3f;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .education-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
   </head>
-
   <body>
     <div id="colorlib-page">
       <div class="container-wrap">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"
+          data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <i></i>
+        </a>
         <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
           <div class="text-center">
             <div class="author-img">
@@ -109,62 +33,121 @@
             </div>
             <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
           </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
+            <div id="navbar" class="collapse">
+              <ul>
+                <li><a href="#" data-nav-section="about">About</a></li>
+                <li><a href="#" data-nav-section="skills">Skills</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
         </aside>
-
         <div id="colorlib-main">
-          <!-- About Section -->
-          <section class="colorlib-section" id="about">
+          
+          <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
-              <h1>About</h1>
-              <p>Hi, I'm <strong>Abhishek V</strong>, a B.Tech student passionate about software development, cybersecurity, and exploring new technologies.</p>
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>About</h1>
+                  <p>
+                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
+                    <strong>Information Technology</strong>. Passionate about 
+                    software development, cybersecurity, and exploring new 
+                    technologies. I love building projects, solving problems, 
+                    and continuously learning.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
-          <!-- Skills Section -->
-          <section class="colorlib-section" id="skills">
+          <section class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
-              <h1>Skills</h1>
-              <ul>
-                <li>JavaScript</li>
-                <li>C Programming</li>
-                <li>Python</li>
-                <li>Database Management (DBMS)</li>
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Skills</h1>
+                  <ul>
+                    <li>⦿ JavaScript</li>
+                    <li>⦿ C Programming</li>
+                    <li>⦿ Python</li>
+                    <li>⦿ Database Management (DBMS)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+                <div class="timeline-centered" id="education">
+                  <div class="timeline-entry">
+                    <div class="timeline-entry-inner">
+                      <div class="timeline-label">
+                        <h2>Government Engineering College, Idukki</h2>
+                        <span><strong>B.Tech in Information Technology</strong></span>
+                        <span><strong>2023 - 2027</strong></span>
+                        <p>Currently pursuing a Bachelor of Technology in Information Technology.  
+                          Focused on Cybersecurity
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-profile" data-section="profile-card">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="profile-cards">
+                  <div class="col">
+                    <div class="github-card" username="abhi-mwonu"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-experience no-print" data-section="repos">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <a href="https://github.com/abhi-mwonu" target="_blank" style="color: inherit">
+                    <h1>
+                      Top <span style="color: #f9bf3f">Repositories</span>
+                      <i class="fa fa-external-link" aria-hidden="true" style="font-size: 30px"></i>
+                    </h1>
+                  </a>
+                </div>
+              </div>
+              <ul id="accordion" class="accordion animate-box" data-animate-effect="fadeInLeft">
+                <li class="open">
+                  <ul id="repos" class="" style="display: block; padding: 10px"></ul>
+                </li>
               </ul>
             </div>
           </section>
 
-          <!-- Education Section -->
-          <section class="colorlib-section" id="education">
+          <section class="colorlib-contact" data-section="contact">
             <div class="colorlib-narrow-content">
-              <h1>Education</h1>
-
-              <div class="education-card">
-                <h2>Government Engineering College, Idukki</h2>
-                <p><strong>Degree:</strong> B.Tech in Information Technology</p>
-                <p><strong>Year:</strong> 2023 - 2027</p>
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Contact</h1>
+                </div>
+                <p>
+                  Feel free to email me at 
+                  <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
+                  for tech discussions, collaborations, or any inquiries.
+                </p>
               </div>
-
-              <div class="education-card">
-                <h2>KPRP HSS, Kongad</h2>
-                <p><strong>Stream:</strong> Biology Science</p>
-                <p><strong>Year:</strong> 2020 - 2022</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- GitHub Profile Section -->
-          <section class="colorlib-section" id="github">
-            <div class="colorlib-narrow-content">
-              <h1>GitHub Profile</h1>
-              <div class="github-card" id="github-profile"></div>
-            </div>
-          </section>
-
-          <!-- Contact Section -->
-          <section class="colorlib-section" id="contact">
-            <div class="colorlib-narrow-content">
-              <h1>Contact</h1>
-              <p>Email: <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong></p>
             </div>
           </section>
         </div>
@@ -174,32 +157,27 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
-
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const githubUsername = "abhi-mwonu";
-        const githubProfile = document.getElementById("github-profile");
-
-        // Fetch GitHub Profile Data
-        fetch(`https://api.github.com/users/${githubUsername}`)
+        fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
           .then(response => response.json())
           .then(data => {
-            githubProfile.innerHTML = `
-              <img src="${data.avatar_url}" alt="GitHub Avatar">
-              <h3>${data.name || githubUsername}</h3>
-              <p>${data.bio || "Passionate about coding & cybersecurity."}</p>
-              <a href="${data.html_url}" target="_blank">View Profile</a>
-            `;
-            githubProfile.classList.add("visible");
-          })
-          .catch(error => console.error("Error fetching GitHub profile:", error));
+            const reposContainer = document.getElementById("repos");
+            if (!reposContainer) return;
 
-        // Animate education cards
-        document.querySelectorAll(".education-card").forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add("visible");
-          }, index * 300);
-        });
+            data.forEach(repo => {
+              const repoItem = document.createElement("li");
+              repoItem.innerHTML = `
+                <a href="${repo.html_url}" target="_blank">
+                  <h3>${repo.name}</h3>
+                  <p>${repo.description || "No description available."}</p>
+                </a>
+              `;
+              reposContainer.appendChild(repoItem);
+            });
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
       });
     </script>
   </body>
