@@ -1,172 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Abhishek V - Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio webpage of Abhishek V">
-    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT">
-    <meta name="author" content="Abhishek V">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="./logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio webpage of Abhishek V" />
+    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
+    <meta name="author" content="Abhishek V" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logo.png" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <!-- Scripts -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="colorlib-page">
-        <div class="container-wrap">
-            <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
-                <div class="text-center">
-                    <div class="author-img"><img alt="profile-img" src="./logo.png"></div>
-                    <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
-                    <ul>
-                        <li><a href="#" data-nav-section="about">About</a></li>
-                        <li><a href="#" data-nav-section="skills">Skills</a></li>
-                        <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
-                        <li><a href="#" data-nav-section="education">Education</a></li>
-                        <li><a href="#" data-nav-section="contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </aside>
-
-            <div id="colorlib-main">
-                <!-- About Section -->
-                <section class="colorlib-about" data-section="about">
-                    <div class="colorlib-narrow-content">
-                        <h1>About</h1>
-                        <p>Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>. Passionate about cybersecurity and exploring new technologies. I love building projects, solving problems, and continuously learning.</p>
-                    </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section class="colorlib-skills" data-section="skills">
-                    <div class="colorlib-narrow-content">
-                        <h1>Skills</h1>
-                        <ul>
-                            <li>⦿ JavaScript</li>
-                            <li>⦿ C Programming</li>
-                            <li>⦿ Python</li>
-                            <li>⦿ Database Management (DBMS)</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Education Section -->
-                <style>
-                    .timeline-centered:before {
-                        display: none;
-                    }
-                    .timeline-entry-inner {
-                        border-left: none !important;
-                        padding-left: 0 !important;
-                    }
-                    .timeline-label {
-                        background: #222;
-                        padding: 15px;
-                        border-radius: 8px;
-                        color: #fff;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    }
-                    .timeline-label h2 {
-                        color: #f9bf3f;
-                        font-size: 20px;
-                    }
-                    .timeline-label p {
-                        font-size: 14px;
-                        color: #bbb;
-                    }
-                </style>
-
-                <section class="colorlib-education" data-section="education">
-                    <div class="colorlib-narrow-content">
-                        <h1>Education</h1>
-                        <div class="timeline-centered" id="education">
-                            <div class="timeline-entry">
-                                <div class="timeline-entry-inner">
-                                    <div class="timeline-label">
-                                        <h2>Government Engineering College, Idukki</h2>
-                                        <p><strong>B.Tech in Information Technology</strong> (2023 - 2027)</p>
-                                        <p>Currently pursuing a Bachelor of Technology in Information Technology. Focused on Cybersecurity.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- GitHub Profile Card -->
-                <section class="colorlib-profile" data-section="profile-card">
-                    <div class="colorlib-narrow-content">
-                        <h1>GitHub Profile</h1>
-                        <div class="profile-cards">
-                            <div class="github-card" username="abhi-mwonu"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- GitHub Repositories Section -->
-                <style>
-                    .repo-card {
-                        background: #222;
-                        border-left: 5px solid #f9bf3f;
-                        padding: 15px;
-                        border-radius: 8px;
-                        margin-bottom: 15px;
-                        color: #fff;
-                        transition: transform 0.3s, box-shadow 0.3s;
-                    }
-                    .repo-card h3 {
-                        color: #f9bf3f;
-                    }
-                    .repo-card:hover {
-                        transform: translateY(-5px);
-                    }
-                </style>
-
-                <section class="colorlib-section" id="repos">
-                    <div class="colorlib-narrow-content">
-                        <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
-                        <div id="repos-container"></div>
-                    </div>
-                </section>
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const githubUsername = "abhi-mwonu";
-                        const reposContainer = document.getElementById("repos-container");
-
-                        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
-                            .then(response => response.json())
-                            .then(data => {
-                                data.forEach(repo => {
-                                    const repoCard = document.createElement("div");
-                                    repoCard.classList.add("repo-card");
-                                    repoCard.innerHTML = `
-                                        <a href="${repo.html_url}" target="_blank">
-                                            <h3>${repo.name}</h3>
-                                            <p>${repo.description || "No description available."}</p>
-                                        </a>`;
-                                    reposContainer.appendChild(repoCard);
-                                });
-                            })
-                            .catch(error => console.error("Error fetching repositories:", error));
-                    });
-                </script>
-
-                <!-- Contact Section -->
-                <section class="colorlib-contact" data-section="contact">
-                    <div class="colorlib-narrow-content">
-                        <h1>Contact</h1>
-                        <p>Email: <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong></p>
-                    </div>
-                </section>
+      <div class="container-wrap">
+        <!-- Sidebar -->
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
+          <div class="text-center">
+            <div class="author-img">
+              <img alt="profile-img" src="./logo.png" />
             </div>
+            <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
+          </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
+            <div id="navbar" class="collapse">
+              <ul>
+                <li><a href="#" data-nav-section="about">About</a></li>
+                <li><a href="#" data-nav-section="skills">Skills</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div id="colorlib-main">
+          <!-- About Section -->
+          <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+              <h1>About</h1>
+              <p>
+                Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>.
+                Passionate about cybersecurity and exploring new technologies.
+                I love building projects, solving problems, and continuously learning.
+              </p>
+            </div>
+          </section>
+
+          <!-- Skills Section -->
+          <section class="colorlib-skills" data-section="skills">
+            <div class="colorlib-narrow-content">
+              <h1>Skills</h1>
+              <ul>
+                <li>⦿ JavaScript</li>
+                <li>⦿ C Programming</li>
+                <li>⦿ Python</li>
+                <li>⦿ Database Management (DBMS)</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Education Section (Card-Based) -->
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <h1>Education</h1>
+              <div class="row">
+                <!-- College -->
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                  <div class="education-card">
+                    <h2>Government Engineering College, Idukki</h2>
+                    <p><strong>B.Tech in Information Technology</strong></p>
+                    <p><strong>2023 - 2027</strong></p>
+                    <p>Currently pursuing a Bachelor of Technology in Information Technology, with a focus on Cybersecurity.</p>
+                  </div>
+                </div>
+                <!-- High School -->
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                  <div class="education-card">
+                    <h2>KPRP HSS, Kongad</h2>
+                    <p><strong>Higher Secondary Education (Biology Science)</strong></p>
+                    <p><strong>2020 - 2022</strong></p>
+                    <p>Studied Biology Science with an emphasis on Mathematics, Physics, and Chemistry.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- GitHub Repositories -->
+          <section class="colorlib-section" id="repos">
+            <div class="colorlib-narrow-content">
+              <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
+              <div id="repos-container"></div>
+            </div>
+          </section>
+
+          <!-- Contact Section -->
+          <section class="colorlib-contact" data-section="contact">
+            <div class="colorlib-narrow-content">
+              <h1>Contact</h1>
+              <p>
+                Feel free to email me at
+                <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong>
+                for tech discussions, collaborations, or any inquiries.
+              </p>
+            </div>
+          </section>
         </div>
+      </div>
     </div>
-</body>
+
+    <!-- External Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- JavaScript for GitHub Repository Fetching -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const githubUsername = "abhi-mwonu";
+        const reposContainer = document.getElementById("repos-container");
+
+        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
+          .then(response => response.json())
+          .then(data => {
+            if (!reposContainer) return;
+
+            data.forEach((repo, index) => {
+              const repoCard = document.createElement("div");
+              repoCard.classList.add("repo-card");
+              repoCard.innerHTML = `
+                <a href="${repo.html_url}" target="_blank">
+                  <h3>${repo.name}</h3>
+                  <p>${repo.description || "No description available."}</p>
+                </a>
+              `;
+              reposContainer.appendChild(repoCard);
+
+              setTimeout(() => {
+                repoCard.classList.add("visible");
+              }, index * 200);
+            });
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
+      });
+    </script>
+
+    <!-- CSS for Styling -->
+    <style>
+      .education-card, .repo-card {
+        background: #222;
+        border-left: 5px solid #f9bf3f;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .repo-card h3 { color: #f9bf3f; }
+      .repo-card p { color: #bbb; }
+    </style>
+  </body>
 </html>
