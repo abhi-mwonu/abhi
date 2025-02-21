@@ -16,32 +16,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <script src="js/modernizr-2.6.2.min.js"></script>
     <style>
-      .education-card {
+      /* SKILLS SECTION STYLES */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .skill-card {
         background: #fff;
         border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin: 10px;
-        transition: 0.3s;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
       }
-      .education-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-      .education-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .education-card h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .education-card p {
-        font-size: 16px;
-        color: #666;
-        margin: 5px 0;
+      .skill-card:hover {
+        transform: scale(1.05);
+        color: white;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       }
     </style>
   </head>
@@ -91,41 +88,22 @@
             </div>
           </section>
 
+          <!-- SKILLS SECTION -->
           <section class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
               <div class="row animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>Skills</h1>
-                  <ul>
-                    <li>⦿ JavaScript</li>
-                    <li>⦿ C Programming</li>
-                    <li>⦿ Python</li>
-                    <li>⦿ Database Management (DBMS)</li>
-                  </ul>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="colorlib-education" data-section="education">
-            <div class="colorlib-narrow-content">
-              <div class="row animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-                <div class="education-container">
-                  <div class="education-card">
-                    <h2>Government Engineering College, Idukki</h2>
-                    <p><strong>B.Tech in Information Technology</strong></p>
-                    <p>2023 - 2027</p>
-                    <p>Currently pursuing a Bachelor of Technology in Information Technology, focusing on Cybersecurity.</p>
-                  </div>
-                  <div class="education-card">
-                    <h2>KPRP HSS, Kongad</h2>
-                    <p><strong>Higher Secondary Education - Biology Science</strong></p>
-                    <p>2020 - 2022</p>
-                    <p>Completed Higher Secondary education with a focus on Biology Science.</p>
-                  </div>
+                <div class="skills-container">
+                  <div class="skill-card">JavaScript</div>
+                  <div class="skill-card">C Programming</div>
+                  <div class="skill-card">Python</div>
+                  <div class="skill-card">Database Management (DBMS)</div>
+                  <div class="skill-card">Cybersecurity</div>
+                  <div class="skill-card">React.js</div>
+                  <div class="skill-card">Node.js</div>
+                  <div class="skill-card">HTML & CSS</div>
                 </div>
               </div>
             </div>
@@ -145,7 +123,7 @@
               </div>
             </div>
           </section>
-          
+
         </div>
       </div>
     </div>
