@@ -8,24 +8,29 @@
     <meta name="description" content="Portfolio webpage of Abhishek V" />
     <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
     <meta name="author" content="Abhishek V" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./logo.png" />
+
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <!-- Scripts -->
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
   </head>
+
   <body>
     <div id="colorlib-page">
       <div class="container-wrap">
-        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-          <i></i>
-        </a>
+        <!-- Sidebar -->
         <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
           <div class="text-center">
             <div class="author-img">
@@ -45,200 +50,133 @@
             </div>
           </nav>
         </aside>
+
+        <!-- Main Content -->
         <div id="colorlib-main">
-          
+          <!-- About Section -->
           <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>About</h1>
-                  <p>
-                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
-                    <strong>Information Technology</strong>. Passionate about 
-                    cybersecurity, and exploring new technologies. I love 
-                    building projects, solving problem and continuously learning.
-                  </p>
-                </div>
-              </div>
+              <h1>About</h1>
+              <p>
+                Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>.
+                Passionate about cybersecurity and exploring new technologies.
+                I love building projects, solving problems, and continuously learning.
+              </p>
             </div>
           </section>
 
+          <!-- Skills Section -->
           <section class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>Skills</h1>
-                  <ul>
-                    <li>⦿ JavaScript</li>
-                    <li>⦿ C Programming</li>
-                    <li>⦿ Python</li>
-                    <li>⦿ Database Management (DBMS)</li>
-                  </ul>
-                </div>
-              </div>
+              <h1>Skills</h1>
+              <ul>
+                <li>⦿ JavaScript</li>
+                <li>⦿ C Programming</li>
+                <li>⦿ Python</li>
+                <li>⦿ Database Management (DBMS)</li>
+              </ul>
             </div>
           </section>
 
+          <!-- Education Section (Card-Based) -->
           <section class="colorlib-education" data-section="education">
-  <div class="colorlib-narrow-content">
-    <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-      <div class="about-desc">
-        <h1>Education</h1>
-      </div>
-      <div class="timeline-centered" id="education">
-        <div class="timeline-entry">
-          <div class="timeline-entry-inner">
-            <div class="timeline-label">
-              <h2>Government Engineering College, Idukki</h2>
-              <span><strong>B.Tech in Information Technology</strong></span>
-              <span><strong>2023 - 2027</strong></span>
-              <p>Currently pursuing a Bachelor of Technology in Information Technology. Focused on Cybersecurity.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-          </section>
-
-          <section class="colorlib-profile" data-section="profile-card">
             <div class="colorlib-narrow-content">
-              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                <div class="profile-cards">
-                  <div class="col">
-                    <div class="github-card" username="abhi-mwonu"></div>
+              <h1>Education</h1>
+              <div class="row">
+                <!-- College -->
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                  <div class="education-card">
+                    <h2>Government Engineering College, Idukki</h2>
+                    <p><strong>B.Tech in Information Technology</strong></p>
+                    <p><strong>2023 - 2027</strong></p>
+                    <p>Currently pursuing a Bachelor of Technology in Information Technology, with a focus on Cybersecurity.</p>
+                  </div>
+                </div>
+                <!-- High School -->
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                  <div class="education-card">
+                    <h2>KPRP HSS, Kongad</h2>
+                    <p><strong>Higher Secondary Education (Biology Science)</strong></p>
+                    <p><strong>2020 - 2022</strong></p>
+                    <p>Studied Biology Science with an emphasis on Mathematics, Physics, and Chemistry.</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <style>
-  /* Repository Cards */
-  .repo-card {
-    background: #222;
-    border-left: 5px solid #f9bf3f;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
+          <!-- GitHub Repositories -->
+          <section class="colorlib-section" id="repos">
+            <div class="colorlib-narrow-content">
+              <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
+              <div id="repos-container"></div>
+            </div>
+          </section>
 
-  .repo-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .repo-card h3 {
-    color: #f9bf3f;
-    font-size: 18px;
-  }
-
-  .repo-card p {
-    font-size: 14px;
-    color: #bbb;
-  }
-
-  .repo-card a {
-    text-decoration: none;
-  }
-
-  .repo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-</style>
-
-<!-- GitHub Repositories Section -->
-<section class="colorlib-section" id="repos">
-  <div class="colorlib-narrow-content">
-    <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
-    <div id="repos-container"></div>
-  </div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const githubUsername = "abhi-mwonu";
-    const reposContainer = document.getElementById("repos-container");
-
-    // Fetch Repositories from GitHub API
-    fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
-      .then(response => response.json())
-      .then(data => {
-        if (!reposContainer) return;
-
-        data.forEach((repo, index) => {
-          const repoCard = document.createElement("div");
-          repoCard.classList.add("repo-card");
-
-          repoCard.innerHTML = `
-            <a href="${repo.html_url}" target="_blank">
-              <h3>${repo.name}</h3>
-              <p>${repo.description || "No description available."}</p>
-            </a>
-          `;
-
-          reposContainer.appendChild(repoCard);
-
-          // Delay animation for each card
-          setTimeout(() => {
-            repoCard.classList.add("visible");
-          }, index * 200);
-        });
-      })
-      .catch(error => console.error("Error fetching repositories:", error));
-  });
-</script>
-
+          <!-- Contact Section -->
           <section class="colorlib-contact" data-section="contact">
             <div class="colorlib-narrow-content">
-              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>Contact</h1>
-                </div>
-                <p>
-                  Feel free to email me at 
-                  <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
-                  for tech discussions, collaborations, or any inquiries.
-                </p>
-              </div>
+              <h1>Contact</h1>
+              <p>
+                Feel free to email me at
+                <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong>
+                for tech discussions, collaborations, or any inquiries.
+              </p>
             </div>
           </section>
         </div>
       </div>
     </div>
 
+    <!-- External Scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
-    
-    <script>
-      ///document.addEventListener("DOMContentLoaded", function () {
-   ///     fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
-        ///  .then(response => response.json())
-      ///    .then(data => {
-        ///    const reposContainer = document.getElementById("repos");
-         ///   if (!reposContainer) return;
 
-        ///    data.forEach(repo => {
-          ///    const repoItem = document.createElement("li");
-           ///   repoItem.innerHTML = `
-            ///    <a href="${repo.html_url}" target="_blank">
-             ///     <h3>${repo.name}</h3>
-             ///     <p>${repo.description || "No description available."}</p>
-             ///   </a>
-           ///   `;
-           ////   reposContainer.appendChild(repoItem);
-          ///  });
-      ////    })
-        ///  .catch(error => console.error("Error fetching repositories:", error));
-   ///   });
+    <!-- JavaScript for GitHub Repository Fetching -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const githubUsername = "abhi-mwonu";
+        const reposContainer = document.getElementById("repos-container");
+
+        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
+          .then(response => response.json())
+          .then(data => {
+            if (!reposContainer) return;
+
+            data.forEach((repo, index) => {
+              const repoCard = document.createElement("div");
+              repoCard.classList.add("repo-card");
+              repoCard.innerHTML = `
+                <a href="${repo.html_url}" target="_blank">
+                  <h3>${repo.name}</h3>
+                  <p>${repo.description || "No description available."}</p>
+                </a>
+              `;
+              reposContainer.appendChild(repoCard);
+
+              setTimeout(() => {
+                repoCard.classList.add("visible");
+              }, index * 200);
+            });
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
+      });
     </script>
+
+    <!-- CSS for Styling -->
+    <style>
+      .education-card, .repo-card {
+        background: #222;
+        border-left: 5px solid #f9bf3f;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .repo-card h3 { color: #f9bf3f; }
+      .repo-card p { color: #bbb; }
+    </style>
   </body>
 </html>
