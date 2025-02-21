@@ -1,204 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Abhishek V - Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio webpage of Abhishek V">
-    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT">
-    <meta name="author" content="Abhishek V">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="./logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio webpage of Abhishek V" />
+    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
+    <meta name="author" content="Abhishek V" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <script src="js/modernizr-2.6.2.min.js"></script>
     <style>
-      .profile-container {
+      .education-card, .skill-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin: 5px;
+        text-align: center;
+        transition: 0.3s;
+      }
+      .education-card:hover, .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+      .education-container, .skills-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
       }
-
-      .profile-card {
-        width: 300px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #ffdd99, #f9bf3f);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 16px;
-        text-align: center;
-        transition: transform 0.2s ease-in-out;
-      }
-
-      .profile-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .profile-card img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-      }
-
-      .profile-card h3 {
+      .education-card h2, .skill-card h2 {
         font-size: 18px;
-        font-weight: bold;
-        margin-top: 10px;
+        margin-bottom: 8px;
+        color: #333;
       }
-
-      .profile-card p {
+      .education-card p, .skill-card p {
         font-size: 14px;
-        color: #555;
+        color: #666;
+        margin: 4px 0;
       }
-
+      .skill-card {
+        width: 150px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      /* Fade-in animation */
       .fade-in {
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s ease-in-out forwards;
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* GitHub Repo Cards */
-      .repo-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .repo-card {
-        width: 350px;
-        border-radius: 8px;
-        background: #222;
-        color: #fff;
-        padding: 16px;
-        text-align: left;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .repo-card a {
-        color: #f9bf3f;
-        font-weight: bold;
-        text-decoration: none;
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="colorlib-page">
-        <div class="container-wrap">
-            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <i></i>
-            </a>
-            <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
-                <div class="text-center">
-                    <div class="author-img">
-                        <img alt="profile-img" src="./logo.png">
-                    </div>
-                    <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
-                    <div id="navbar" class="collapse">
-                        <ul>
-                            <li><a href="#" data-nav-section="about">About</a></li>
-                            <li><a href="#" data-nav-section="skills">Skills</a></li>
-                            <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
-                            <li><a href="#" data-nav-section="education">Education</a></li>
-                            <li><a href="#" data-nav-section="contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
-
-            <div id="colorlib-main">
-                <section class="colorlib-about" data-section="about">
-                    <div class="colorlib-narrow-content fade-in">
-                        <h1>About</h1>
-                        <p>
-                            Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
-                            <strong>Information Technology</strong>. Passionate about 
-                            software development, cybersecurity, and exploring new 
-                            technologies. I love building projects, solving problems, 
-                            and continuously learning.
-                        </p>
-
-                        <!-- GitHub Profile Card -->
-                        <div class="profile-container fade-in">
-                            <div class="github-card" data-user="AbhishekV" data-theme="default"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- GitHub Repositories Section -->
-                <section class="colorlib-repos" data-section="repos">
-                    <div class="colorlib-narrow-content fade-in">
-                        <h1>Top Repositories</h1>
-                        <div id="repo-container" class="repo-container"></div>
-                    </div>
-                </section>
-
-                <!-- Education Section -->
-                <section class="colorlib-education" data-section="education">
-                    <div class="colorlib-narrow-content fade-in">
-                        <h1>Education</h1>
-                        <div class="profile-container">
-                            <div class="profile-card">
-                                <h3>Government Engineering College, Idukki</h3>
-                                <p><strong>B.Tech in Information Technology</strong></p>
-                                <p>2023 - 2027</p>
-                            </div>
-                            <div class="profile-card">
-                                <h3>KPRP HSS, Kongad</h3>
-                                <p><strong>Higher Secondary - Biology Science</strong></p>
-                                <p>2020 - 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+      <div class="container-wrap">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"
+          data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <i></i>
+        </a>
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
+          <div class="text-center">
+            <div class="author-img">
+              <img alt="profile-img" src="./logo.png" />
             </div>
+            <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
+          </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
+            <div id="navbar" class="collapse">
+              <ul>
+                <li><a href="#" data-nav-section="about">About</a></li>
+                <li><a href="#" data-nav-section="skills">Skills</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        <div id="colorlib-main">
+          
+          <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>About</h1>
+                  <p>
+                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
+                    <strong>Information Technology</strong>. Passionate about 
+                    software development, cybersecurity, and exploring new 
+                    technologies. I love building projects, solving problems, 
+                    and continuously learning.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-skills fade-in" data-section="skills">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Skills</h1>
+                </div>
+                <div class="skills-container">
+                  <div class="skill-card"><h2>JavaScript</h2></div>
+                  <div class="skill-card"><h2>C Programming</h2></div>
+                  <div class="skill-card"><h2>Python</h2></div>
+                  <div class="skill-card"><h2>DBMS</h2></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-education fade-in" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+                <div class="education-container">
+                  <div class="education-card">
+                    <h2>Government Engineering College, Idukki</h2>
+                    <p><strong>B.Tech in Information Technology</strong></p>
+                    <p>2023 - 2027</p>
+                    <p>Currently pursuing a Bachelor of Technology in Information Technology, focusing on Cybersecurity.</p>
+                  </div>
+                  <div class="education-card">
+                    <h2>KPRP HSS, Kongad</h2>
+                    <p><strong>Higher Secondary Education - Biology Science</strong></p>
+                    <p>2020 - 2022</p>
+                    <p>Completed Higher Secondary education with a focus on Biology Science.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-contact" data-section="contact">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Contact</h1>
+                </div>
+                <p>
+                  Feel free to email me at 
+                  <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
+                  for tech discussions, collaborations, or any inquiries.
+                </p>
+              </div>
+            </div>
+          </section>
+          
         </div>
+      </div>
     </div>
 
-    <!-- GitHub Repos Fetch Script -->
-    <script>
-        async function fetchGitHubRepos() {
-            const username = "AbhishekV"; // Your GitHub username
-            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-            const repos = await response.json();
-            const repoContainer = document.getElementById('repo-container');
-
-            repos.forEach(repo => {
-                const repoCard = document.createElement('div');
-                repoCard.classList.add('repo-card');
-                repoCard.innerHTML = `
-                    <h3>${repo.name}</h3>
-                    <p>${repo.description || 'No description available'}</p>
-                    <p>⭐ ${repo.stargazers_count} | Forks: ${repo.forks_count}</p>
-                    <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-                `;
-                repoContainer.appendChild(repoCard);
-            });
-        }
-
-        fetchGitHubRepos();
-    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        fadeInElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+  </body>
 </html>
