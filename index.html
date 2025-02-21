@@ -69,6 +69,40 @@
       .github-card a:hover {
         background: #e0a800;
       }
+
+      /* Education Section */
+      .education-card {
+        background: #222;
+        border-left: 5px solid #f9bf3f; /* Golden left border */
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .education-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .education-card h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #f9bf3f;
+      }
+
+      .education-card p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .education-card strong {
+        color: #f9bf3f;
+      }
     </style>
   </head>
 
@@ -82,62 +116,26 @@
             </div>
             <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
           </div>
-          <nav id="colorlib-main-menu" role="navigation" class="navbar">
-            <ul>
-              <li><a href="#" data-nav-section="about">About</a></li>
-              <li><a href="#" data-nav-section="skills">Skills</a></li>
-              <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
-              <li><a href="#" data-nav-section="education">Education</a></li>
-              <li><a href="#" data-nav-section="contact">Contact</a></li>
-            </ul>
-          </nav>
         </aside>
 
         <div id="colorlib-main">
-          <section class="colorlib-about" data-section="about">
+          <section class="colorlib-education" data-section="education">
             <div class="colorlib-narrow-content">
-              <h1>About</h1>
-              <p>
-                Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in 
-                <strong>Information Technology</strong>. Passionate about 
-                software development, cybersecurity, and exploring new 
-                technologies.
-              </p>
-            </div>
-          </section>
+              <h1>Education</h1>
 
-          <section class="colorlib-skills" data-section="skills">
-            <div class="colorlib-narrow-content">
-              <h1>Skills</h1>
-              <ul>
-                <li>⦿ JavaScript</li>
-                <li>⦿ C Programming</li>
-                <li>⦿ Python</li>
-                <li>⦿ Database Management (DBMS)</li>
-              </ul>
-            </div>
-          </section>
+              <div class="education-card">
+                <h2>Government Engineering College, Idukki</h2>
+                <p><strong>Degree:</strong> B.Tech in Information Technology</p>
+                <p><strong>Year:</strong> 2023 - 2027</p>
+                <p><strong>Focus:</strong> Cybersecurity & Software Development</p>
+              </div>
 
-          <section class="colorlib-profile" data-section="profile-card">
-            <div class="colorlib-narrow-content">
-              <h1>GitHub Profile</h1>
-              <div class="github-card" id="github-profile"></div>
-            </div>
-          </section>
-
-          <section class="colorlib-repos" data-section="repos">
-            <div class="colorlib-narrow-content">
-              <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
-              <ul id="repos"></ul>
-            </div>
-          </section>
-
-          <section class="colorlib-contact" data-section="contact">
-            <div class="colorlib-narrow-content">
-              <h1>Contact</h1>
-              <p>
-                Email me at <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
-              </p>
+              <div class="education-card">
+                <h2>KPRP HSS, Kongad</h2>
+                <p><strong>Stream:</strong> Biology Science</p>
+                <p><strong>Year:</strong> 2020 - 2022</p>
+                <p><strong>Key Subjects:</strong> Physics, Chemistry, Biology, Mathematics</p>
+              </div>
             </div>
           </section>
         </div>
@@ -152,7 +150,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         const githubUsername = "abhi-mwonu";
         const githubProfile = document.getElementById("github-profile");
-        const reposContainer = document.getElementById("repos");
 
         // Fetch GitHub Profile Data
         fetch(`https://api.github.com/users/${githubUsername}`)
@@ -168,22 +165,13 @@
           })
           .catch(error => console.error("Error fetching GitHub profile:", error));
 
-        // Fetch Repositories
-        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`)
-          .then(response => response.json())
-          .then(data => {
-            data.forEach(repo => {
-              const repoItem = document.createElement("li");
-              repoItem.innerHTML = `
-                <a href="${repo.html_url}" target="_blank">
-                  <h3>${repo.name}</h3>
-                  <p>${repo.description || "No description available."}</p>
-                </a>
-              `;
-              reposContainer.appendChild(repoItem);
-            });
-          })
-          .catch(error => console.error("Error fetching repositories:", error));
+        // Add animation to education cards
+        const educationCards = document.querySelectorAll(".education-card");
+        educationCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("visible");
+          }, index * 300);
+        });
       });
     </script>
   </body>
