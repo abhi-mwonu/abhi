@@ -1,247 +1,105 @@
-/* General Styles */
-* {
-	box-sizing: border-box;
-}
-
-.dark-mode {
-	background-color: black;
-	color: white;
-}
-
-body {
-	font-family: "Montserrat", sans-serif !important;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.8 !important;
-	color: black;
-}
-
-@media screen and (max-width: 992px) {
-	body {
-		font-size: 16px;
-	}
-	h2,
-	h4 {
-		text-align: center;
-	}
-}
-
-a {
-	color: #2c98f0;
-	-webkit-transition: 0.5s;
-	-o-transition: 0.5s;
-	transition: 0.5s;
-}
-a:hover,
-a:active,
-a:focus {
-	color: #2c98f0;
-	outline: none;
-	text-decoration: none !important;
-}
-
-p {
-	margin-bottom: 1.5em;
-	font-family: "Montserrat", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Playfair Display", Georgia, serif;
-	font-weight: 500;
-	margin: 0 0 30px 0;
-}
-
-h2 {
-	font-weight: 200;
-	margin: 0 0 0px 0;
-	margin-top: 0px !important;
-}
-
-h3 {
-	font-weight: 500;
-	margin: 0 0 30px 0;
-}
-
-h4 {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 300;
-	font-size: 15px;
-	margin: 0 0 30px 0;
-}
-
-/* Education Section */
-.colorlib-education {
-	padding-top: 3em;
-	padding-bottom: 3em;
-}
-
-.education-card {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	margin-bottom: 20px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.education-card h2 {
-	font-size: 1.5rem;
-	margin-bottom: 10px;
-	color: #333;
-}
-
-.education-card p {
-	font-size: 1rem;
-	color: #666;
-	line-height: 1.6;
-}
-
-/* Skills Section */
-.colorlib-skills {
-	padding-top: 3em;
-	padding-bottom: 3em;
-}
-
-.skills-container {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	margin-top: 20px;
-}
-
-.skills-container ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.skills-container li {
-	font-size: 1rem;
-	color: #666;
-	margin-bottom: 10px;
-}
-
-/* GitHub Profile Card */
-.github-profile-card {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	text-align: center;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.github-profile-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.profile-avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	margin-bottom: 15px;
-}
-
-.profile-stats {
-	display: flex;
-	justify-content: space-around;
-	margin: 15px 0;
-}
-
-.github-button {
-	display: inline-block;
-	padding: 10px 20px;
-	background: #333;
-	color: #fff;
-	border-radius: 5px;
-	text-decoration: none;
-	transition: background 0.3s ease;
-}
-
-.github-button:hover {
-	background: #555;
-}
-
-/* Top Repositories Section */
-.repo-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-
-.repo-box {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	flex: 1 1 calc(33.333% - 40px);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.repo-box:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.repo-box h3 {
-	font-size: 1.2rem;
-	margin-bottom: 10px;
-}
-
-.repo-box p {
-	font-size: 0.9rem;
-	color: #666;
-	margin-bottom: 15px;
-}
-
-.repo-link {
-	display: inline-block;
-	padding: 8px 15px;
-	background: #f9bf3f;
-	color: #333;
-	border-radius: 5px;
-	text-decoration: none;
-	transition: background 0.3s ease;
-}
-
-.repo-link:hover {
-	background: #e0a800;
-}
-
-/* Animations */
-.animate-box {
-	opacity: 0;
-}
-
-.fadeInLeft, .fadeInRight, .fadeInUp {
-	animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-/* Responsive Styles */
+/* General Styles for Mobile */
 @media screen and (max-width: 768px) {
-	.repo-box {
-		flex: 1 1 100%;
-	}
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+
+  .colorlib-narrow-content {
+    padding: 0 1em;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Education Section for Mobile */
+  .education-card {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  .education-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .education-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Skills Section for Mobile */
+  .skills-container {
+    padding: 15px;
+  }
+
+  .skills-container ul {
+    padding-left: 20px;
+  }
+
+  .skills-container li {
+    font-size: 0.9rem;
+  }
+
+  /* GitHub Profile Card for Mobile */
+  .github-profile-card {
+    padding: 15px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-stats p {
+    margin: 5px 0;
+  }
+
+  .github-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Top Repositories for Mobile */
+  .repo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .repo-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .repo-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .repo-box p {
+    font-size: 0.9rem;
+  }
+
+  .repo-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Contact Section for Mobile */
+  .colorlib-contact p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
 }
