@@ -15,7 +15,25 @@
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
     <style>
-        /* Education Box Styling */
+        /* Smooth fade-in animation */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section hover effect */
+        .colorlib-section:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Education Boxes */
         .education-container {
             display: flex;
             flex-wrap: wrap;
@@ -31,6 +49,18 @@
             color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .education-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .education-box:hover {
+            transform: translateY(-5px);
         }
 
         .education-box h2 {
@@ -41,10 +71,6 @@
         .education-box p {
             font-size: 14px;
             color: #bbb;
-        }
-
-        .education-box:hover {
-            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -69,15 +95,15 @@
 
             <div id="colorlib-main">
                 <!-- About Section -->
-                <section class="colorlib-about" data-section="about">
+                <section class="colorlib-about animated-section" data-section="about">
                     <div class="colorlib-narrow-content">
                         <h1>About</h1>
-                        <p>Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>. Passionate about cybersecurity and exploring new technologies. I love building projects, solving problems, and continuously learning.</p>
+                        <p>Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>. Passionate about cybersecurity and exploring new technologies.</p>
                     </div>
                 </section>
 
                 <!-- Skills Section -->
-                <section class="colorlib-skills" data-section="skills">
+                <section class="colorlib-skills animated-section" data-section="skills">
                     <div class="colorlib-narrow-content">
                         <h1>Skills</h1>
                         <ul>
@@ -89,27 +115,25 @@
                     </div>
                 </section>
 
-                <!-- Education Section (In Separate Boxes) -->
-                <section class="colorlib-education" data-section="education">
+                <!-- Education Section -->
+                <section class="colorlib-education animated-section" data-section="education">
                     <div class="colorlib-narrow-content">
                         <h1>Education</h1>
                         <div class="education-container">
                             <div class="education-box">
                                 <h2>Government Engineering College, Idukki</h2>
                                 <p><strong>B.Tech in Information Technology</strong> (2023 - 2027)</p>
-                                <p>Currently pursuing a Bachelor of Technology in Information Technology. Focused on Cybersecurity.</p>
                             </div>
                             <div class="education-box">
                                 <h2>KPRP HSS, Kongad</h2>
                                 <p><strong>Higher Secondary Education</strong> (2020 - 2022)</p>
-                                <p>Studied Biology Science, building a strong foundation in scientific and analytical skills.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- GitHub Profile Card -->
-                <section class="colorlib-profile" data-section="profile-card">
+                <section class="colorlib-profile animated-section" data-section="profile-card">
                     <div class="colorlib-narrow-content">
                         <h1>GitHub Profile</h1>
                         <div class="profile-cards">
@@ -118,26 +142,8 @@
                     </div>
                 </section>
 
-                <!-- GitHub Repositories Section -->
-                <style>
-                    .repo-card {
-                        background: #222;
-                        border-left: 5px solid #f9bf3f;
-                        padding: 15px;
-                        border-radius: 8px;
-                        margin-bottom: 15px;
-                        color: #fff;
-                        transition: transform 0.3s, box-shadow 0.3s;
-                    }
-                    .repo-card h3 {
-                        color: #f9bf3f;
-                    }
-                    .repo-card:hover {
-                        transform: translateY(-5px);
-                    }
-                </style>
-
-                <section class="colorlib-section" id="repos">
+                <!-- GitHub Repositories -->
+                <section class="colorlib-section animated-section" id="repos">
                     <div class="colorlib-narrow-content">
                         <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
                         <div id="repos-container"></div>
@@ -161,19 +167,21 @@
                                             <p>${repo.description || "No description available."}</p>
                                         </a>`;
                                     reposContainer.appendChild(repoCard);
+                                    setTimeout(() => repoCard.classList.add("visible"), 200);
                                 });
                             })
                             .catch(error => console.error("Error fetching repositories:", error));
                     });
-                </script>
 
-                <!-- Contact Section -->
-                <section class="colorlib-contact" data-section="contact">
-                    <div class="colorlib-narrow-content">
-                        <h1>Contact</h1>
-                        <p>Email: <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong></p>
-                    </div>
-                </section>
+                    // Make sections fade in on scroll
+                    document.addEventListener("scroll", function () {
+                        document.querySelectorAll(".animated-section").forEach(section => {
+                            if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                                section.classList.add("visible");
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
