@@ -6,14 +6,26 @@
     <title>Abhishek V - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portfolio webpage of Abhishek V" />
-    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
+    <meta
+      name="keywords"
+      content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT"
+    />
     <meta name="author" content="Abhishek V" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="icon" type="image/png" href="./logo.png" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
@@ -39,6 +51,7 @@
                 <li><a href="#" data-nav-section="about">About</a></li>
                 <li><a href="#" data-nav-section="skills">Skills</a></li>
                 <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="blogs">Blogs</a></li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
                 <li><a href="#" data-nav-section="contact">Contact</a></li>
               </ul>
@@ -86,17 +99,17 @@
                 <div class="about-desc">
                   <h1>Education</h1>
                 </div>
-                <div class="timeline-centered" id="education">
-                  <div class="timeline-entry">
-                    <div class="timeline-entry-inner">
-                      <div class="timeline-label">
-                        <h2>Government Engineering College, Idukki</h2>
-                        <span><strong>B.Tech in Information Technology</strong></span>
-                        <span><strong>2023 - 2027</strong></span>
-                        <p>Currently pursuing a Bachelor of Technology in Information Technology.  
-                          Focused on Cybersecurity
-                        </p>
-                      </div>
+        
+              <div class="timeline-centered" id="education">
+                <div class="timeline-entry">
+                  <div class="timeline-entry-inner">
+                    <div class="timeline-label">
+                      <h2>Government Engineering College, Idukki</h2>
+                      <span><strong>B.Tech in Information Technology</strong></span>
+                      <span>2023 - 2027</span>
+                      <p>Currently pursuing a Bachelor of Technology in Information Technology.  
+                        Focused on Cybersecurity
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -150,35 +163,12 @@
               </div>
             </div>
           </section>
+          
         </div>
       </div>
     </div>
-
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
-    
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
-          .then(response => response.json())
-          .then(data => {
-            const reposContainer = document.getElementById("repos");
-            if (!reposContainer) return;
-
-            data.forEach(repo => {
-              const repoItem = document.createElement("li");
-              repoItem.innerHTML = `
-                <a href="${repo.html_url}" target="_blank">
-                  <h3>${repo.name}</h3>
-                  <p>${repo.description || "No description available."}</p>
-                </a>
-              `;
-              reposContainer.appendChild(repoItem);
-            });
-          })
-          .catch(error => console.error("Error fetching repositories:", error));
-      });
-    </script>
   </body>
 </html>
