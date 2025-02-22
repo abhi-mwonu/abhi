@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
@@ -36,6 +35,7 @@
                 <li><a href="#" data-nav-section="about">About</a></li>
                 <li><a href="#" data-nav-section="skills">Skills</a></li>
                 <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="profile-card">GitHub Profile</a></li>
                 <li><a href="#" data-nav-section="blogs">Blogs</a></li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
                 <li><a href="#" data-nav-section="contact">Contact</a></li>
@@ -44,6 +44,7 @@
           </nav>
         </aside>
         <div id="colorlib-main">
+          <!-- About Section -->
           <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
               <div class="row animate-box" data-animate-effect="fadeInLeft">
@@ -59,39 +60,19 @@
             </div>
           </section>
 
-          <!-- Education Section -->
-<section class="colorlib-education" data-section="education">
-  <div class="colorlib-narrow-content">
-    <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
-      <div class="about-desc">
-        <h1>Education</h1>
-      </div>
-    </div>
-    <div id="education">
-      <div>
-        <h2>Government Engineering College, Idukki</h2>
-        <p><strong>B.Tech in Information Technology</strong> (2023 - 2027)</p>
-        <p>
-          Currently pursuing a Bachelor of Technology in Information Technology.  
-          Gaining knowledge in <strong>Web Development, Cybersecurity, Database Management,</strong>  
-          and <strong>Networking</strong> while actively participating in tech communities.
-        </p>
-      </div>
-      <hr> <!-- Adds a separator between degrees -->
-      <div>
-        <h2>KPRP HSS, Kongad</h2>
-        <p><strong>Higher Secondary Education - Biology Science</strong> (2020 - 2022)</p>
-        <p>
-          Completed higher secondary education with a focus on **Biology Science**,  
-          developing a strong foundation in **Physics, Chemistry, Biology, and Mathematics**.  
-          This period fueled my interest in technology and problem-solving.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+          <!-- GitHub Profile Card Section -->
+          <section class="colorlib-profile" data-section="profile-card">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <h1>GitHub Profile</h1>
+                <div class="github-profile-card">
+                  <div class="github-card" id="github-profile"></div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          <!-- GitHub Banner -->
+          <!-- Top Repositories Section -->
           <section class="colorlib-experience no-print" data-section="repos">
             <div class="colorlib-narrow-content">
               <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
@@ -104,11 +85,44 @@
                   </a>
                 </div>
               </div>
-              <ul id="accordion" class="accordion animate-box" data-animate-effect="fadeInLeft">
-                <li class="open">
-                  <ul id="repos" class="" style="display: block; padding: 10px"></ul>
-                </li>
-              </ul>
+              <div class="row animate-box" data-animate-effect="fadeInUp">
+                <div id="repos" class="repo-container"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education Section -->
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                  <div class="education-card">
+                    <h2>Government Engineering College, Idukki</h2>
+                    <p><strong>B.Tech in Information Technology</strong> (2023 - 2027)</p>
+                    <p>
+                      Currently pursuing a Bachelor of Technology in Information Technology.  
+                      Gaining knowledge in <strong>Web Development, Cybersecurity, Database Management,</strong>  
+                      and <strong>Networking</strong> while actively participating in tech communities.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                  <div class="education-card">
+                    <h2>KPRP HSS, Kongad</h2>
+                    <p><strong>Higher Secondary Education - Biology Science</strong> (2020 - 2022)</p>
+                    <p>
+                      Completed higher secondary education with a focus on <strong>Biology Science</strong>,  
+                      developing a strong foundation in <strong>Physics, Chemistry, Biology, and Mathematics</strong>.  
+                      This period fueled my interest in technology and problem-solving.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -143,12 +157,6 @@
               </div>
             </div>
           </section>
-
-          <section class="colorlib-footer no-print" data-section="footer">
-            <div class="colorlib-narrow-content">
-              <footer class="footer" id="footer"></footer>
-            </div>
-          </section>
         </div>
       </div>
     </div>
@@ -156,7 +164,32 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
     <script>
+      // Fetch GitHub Profile Data
       document.addEventListener("DOMContentLoaded", function () {
+        // Fetch GitHub Profile
+        fetch("https://api.github.com/users/abhi-mwonu")
+          .then(response => response.json())
+          .then(data => {
+            const profileContainer = document.getElementById("github-profile");
+            if (!profileContainer) return;
+
+            profileContainer.innerHTML = `
+              <div class="profile-card">
+                <img src="${data.avatar_url}" alt="${data.login}" class="profile-avatar" />
+                <h2>${data.name || data.login}</h2>
+                <p>${data.bio || "No bio available."}</p>
+                <div class="profile-stats">
+                  <p><strong>Followers:</strong> ${data.followers}</p>
+                  <p><strong>Following:</strong> ${data.following}</p>
+                  <p><strong>Repositories:</strong> ${data.public_repos}</p>
+                </div>
+                <a href="${data.html_url}" target="_blank" class="github-button">View Profile</a>
+              </div>
+            `;
+          })
+          .catch(error => console.error("Error fetching GitHub profile:", error));
+
+        // Fetch Top Repositories
         fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
           .then(response => response.json())
           .then(data => {
@@ -164,12 +197,12 @@
             if (!reposContainer) return;
 
             data.forEach(repo => {
-              const repoItem = document.createElement("li");
+              const repoItem = document.createElement("div");
+              repoItem.classList.add("repo-box");
               repoItem.innerHTML = `
-                <a href="${repo.html_url}" target="_blank">
-                  <h3>${repo.name}</h3>
-                  <p>${repo.description || "No description available."}</p>
-                </a>
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "No description available."}</p>
+                <a href="${repo.html_url}" target="_blank" class="repo-link">View Repository</a>
               `;
               reposContainer.appendChild(repoItem);
             });
