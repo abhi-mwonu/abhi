@@ -1,458 +1,217 @@
-import {
-  bio,
-  skills,
-  education,
-  experience,
-  trekking,
-  footer,
-} from "./user-data/data.js";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Abhishek V - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio webpage of Abhishek V" />
+    <meta name="keywords" content="portfolio, website, personal website, GitHub, projects, computer science, engineering, IT" />
+    <meta name="author" content="Abhishek V" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script type="module" src="index.js"></script>
+    <script src="js/profile-card.js"></script>
+  </head>
+  <body>
+    <div id="colorlib-page">
+      <div class="container-wrap">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
+          <div class="text-center">
+            <div class="author-img">
+              <img alt="profile-img" src="./logo.png" />
+            </div>
+            <h1 id="colorlib-logo"><a href="./index.html">Abhishek V</a></h1>
+          </div>
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
+            <div id="navbar" class="collapse">
+              <ul>
+                <li><a href="#" data-nav-section="about">About</a></li>
+                <li><a href="#" data-nav-section="skills">Skills</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="profile-card">GitHub Profile</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        <div id="colorlib-main">
+          <!-- About Section -->
+          <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>About</h1>
+                  <p>
+                    Hi, I'm <strong>Abhishek V</strong>, a B.Tech student in <strong>Information Technology</strong>.  
+                    Passionate about software development, cybersecurity, and exploring new technologies.  
+                    I love building projects, solving problems, and continuously learning.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-import { URLs } from "./user-data/urls.js";
+          <!-- Skills Section -->
+          <section class="colorlib-skills" data-section="skills">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Skills</h1>
+                </div>
+                <div class="skills-container">
+                  <ul>
+                    <li>JavaScript, C Programming</li>
+                    <li>Python</li>
+                    <li>Database Management Systems (DBMS)</li>
+                    <li>Web Development</li>
+                    <li>Cybersecurity</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
 
-const { medium, gitConnected, gitRepo } = URLs;
+          <!-- Education Section -->
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                  <div class="education-card">
+                    <h2>Government Engineering College, Idukki</h2>
+                    <p><strong>B.Tech in Information Technology</strong> (2023 - 2027)</p>
+                    <p>
+                      Currently pursuing a Bachelor of Technology in Information Technology.  
+                      Gaining knowledge in <strong>Web Development, Cybersecurity, Database Management,</strong>  
+                      and <strong>Networking</strong> while actively participating in tech communities.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                  <div class="education-card">
+                    <h2>KPRP HSS, Kongad</h2>
+                    <p><strong>Higher Secondary Education - Biology Science</strong> (2020 - 2022)</p>
+                    <p>
+                      Completed higher secondary education with a focus on <strong>Biology Science</strong>,  
+                      developing a strong foundation in <strong>Physics, Chemistry, Biology, and Mathematics</strong>.  
+                      This period fueled my interest in technology and problem-solving.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-async function fetchBlogsFromMedium(url) {
-  try {
-    const response = await fetch(url);
-    const { items } = await response.json();
-    populateBlogs(items, "blogs");
-  } catch (error) {
-    throw new Error(
-      `Error in fetching the blogs from Medium profile: ${error}`
-    );
-  }
-}
+          <!-- GitHub Profile Card Section -->
+          <section class="colorlib-profile" data-section="profile-card">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <h1>GitHub Profile</h1>
+                <div class="github-profile-card">
+                  <div class="github-card" id="github-profile"></div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-async function fetchReposFromGit(url) {
-  try {
-    const response = await fetch(url);
-    const items = await response.json();
-    populateRepo(items, "repos");
-  } catch (error) {
-    throw new Error(`Error in fetching the blogs from repos: ${error}`);
-  }
-}
+          <!-- Top Repositories Section -->
+          <section class="colorlib-experience no-print" data-section="repos">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <a href="https://github.com/abhi-mwonu" target="_blank" style="color: inherit">
+                    <h1>
+                      Top <span style="color: #f9bf3f">Repositories</span>
+                      <i class="fa fa-external-link" aria-hidden="true" style="font-size: 30px"></i>
+                    </h1>
+                  </a>
+                </div>
+              </div>
+              <div class="row animate-box" data-animate-effect="fadeInUp">
+                <div id="repos" class="repo-container"></div>
+              </div>
+            </div>
+          </section>
 
-async function fetchGitConnectedData(url) {
-  try {
-    const response = await fetch(url);
-    console.log(response);
-    const { basics } = await response.json();
-    // populateBlogs(items, "blogs");
-    mapBasicResponse(basics);
-  } catch (error) {
-    throw new Error(`Error in fetching the blogs from git connected: ${error}`);
-  }
-}
+          <!-- Contact Section -->
+          <section class="colorlib-contact" data-section="contact">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Contact</h1>
+                </div>
+                <p>
+                  Feel free to email me at 
+                  <strong><a href="mailto:itsmeabhishek555@gmail.com">itsmeabhishek555@gmail.com</a></strong> 
+                  for tech discussions, collaborations, or any inquiries.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Fetch GitHub Profile Data
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fetch GitHub Profile
+        fetch("https://api.github.com/users/abhi-mwonu")
+          .then(response => response.json())
+          .then(data => {
+            const profileContainer = document.getElementById("github-profile");
+            if (!profileContainer) return;
 
-function mapBasicResponse(basics) {
-  const {
-    name,
-    label,
-    image,
-    email,
-    phone,
-    url,
-    summary,
-    profiles,
-    headline,
-    blog,
-    yearsOfExperience,
-    username,
-    locationAsString,
-    region,
-    karma,
-    id,
-    followers,
-    following,
-    picture,
-    website,
-  } = basics;
+            profileContainer.innerHTML = `
+              <div class="profile-card">
+                <img src="${data.avatar_url}" alt="${data.login}" class="profile-avatar" />
+                <h2>${data.name || data.login}</h2>
+                <p>${data.bio || "No bio available."}</p>
+                <div class="profile-stats">
+                  <p><strong>Followers:</strong> ${data.followers}</p>
+                  <p><strong>Following:</strong> ${data.following}</p>
+                  <p><strong>Repositories:</strong> ${data.public_repos}</p>
+                </div>
+                <a href="${data.html_url}" target="_blank" class="github-button">View Profile</a>
+              </div>
+            `;
+          })
+          .catch(error => console.error("Error fetching GitHub profile:", error));
 
-  // added title of page
-  window.parent.document.title = name;
-}
+        // Fetch Top Repositories
+        fetch("https://api.github.com/users/abhi-mwonu/repos?sort=updated&per_page=5")
+          .then(response => response.json())
+          .then(data => {
+            const reposContainer = document.getElementById("repos");
+            if (!reposContainer) return;
 
-function populateBio(items, id) {
-  const bioTag = document.getElementById(id);
-  items.forEach((bioItem) => {
-    const p = getElement("p", null);
-    p.innerHTML = bioItem;
-    bioTag.append(p);
-  });
-}
-
-function populateSkills(items, id) {
-  const skillsTag = document.getElementById(id);
-  items.forEach((item) => {
-    const h3 = getElement("li", null);
-    h3.innerHTML = item;
-
-    const divProgressWrap = getElement("div", "progress-wrap");
-    divProgressWrap.append(h3);
-
-    const divAnimateBox = getElement("div", "col-md-12 animate-box");
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
-  });
-}
-
-function populateTrekking(items) {
-  const skillsTag = document.getElementById('trekking');
-  items.forEach((item) => {
-    const h3 = getElement("li", null);
-    h3.innerHTML = item;
-
-    const divProgressWrap = getElement("div", "progress-wrap");
-    divProgressWrap.append(h3);
-
-    const divAnimateBox = getElement("div", "col-md-12 animate-box");
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
-  });
-}
-
-function populateBlogs(items, id) {
-  const projectdesign = document.getElementById(id);
-  const count = 3; // Number of blogs to display
-
-  for (let i = 0; i < count; i++) {
-      // Create a wrapper for the blog card
-      const blogCard = document.createElement("div");
-      blogCard.className = "blog-card";
-      blogCard.style = `
-          display: flex;
-          flex-direction: column;
-          border-radius: 12px;
-          padding: 16px;
-          font-size: 14px;
-          background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          min-height: 150px;
-          cursor: pointer;
-      `;
-
-      // Wrap the card content in an anchor tag
-      const blogLink = document.createElement("a");
-      blogLink.href = items[i].link;
-      blogLink.target = "_blank";
-      blogLink.style = "text-decoration: none; color: black; display: block;";
-
-      blogCard.appendChild(blogLink);
-
-      // Blog Title
-      const blogTitle = document.createElement("h4");
-      blogTitle.className = "blog-heading";
-      blogTitle.innerHTML = items[i].title;
-      blogTitle.style = "margin: 0 0 8px; font-size: 18px; font-weight: bold;";
-      blogLink.appendChild(blogTitle);
-
-      // Publish Date
-      const pubDateEle = document.createElement("p");
-      pubDateEle.className = "publish-date";
-      pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
-      pubDateEle.style = "margin: 0 0 12px; font-size: 12px; color: #555;";
-      blogLink.appendChild(pubDateEle);
-
-      // Blog Description
-      const blogDescription = document.createElement("p");
-      blogDescription.className = "blog-description";
-      const html = items[i].content;
-      const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
-      blogDescription.innerHTML = doc;
-      blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #000;";
-      blogLink.appendChild(blogDescription);
-
-      // Categories (Tags)
-      const categoriesDiv = document.createElement("div");
-      categoriesDiv.style = "display: flex; gap: 8px; margin-top: 12px;";
-
-      for (const category of items[i].categories) {
-          const badge = document.createElement("span");
-          badge.className = "badge";
-          badge.innerHTML = category;
-          badge.style = `
-              font-size: 12px;
-              padding: 4px 8px;
-              background-color: #007acc;
-              color: white;
-              border-radius: 4px;
-          `;
-          categoriesDiv.appendChild(badge);
-      }
-
-      blogLink.appendChild(categoriesDiv);
-
-      // Append the blog card to the container
-      projectdesign.appendChild(blogCard);
-  }
-}
-
-function populateRepo(items, id) {
-  const projectdesign = document.getElementById(id);
-  const count = 4; // Adjust this count based on the number of repos you want to display
-
-  // Set up a wrapper div to hold repo cards in rows of 2
-  const rowWrapper = document.createElement("div");
-  rowWrapper.style =
-    "display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;";
-  projectdesign.appendChild(rowWrapper);
-
-  for (let i = 0; i < count; i++) {
-    // Create elements for each repo card
-    const repoCard = document.createElement("div");
-    repoCard.className = "repo-card";
-    repoCard.style = `
-          flex: 1 0 48%;  /* Two cards in one row */
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          border-radius: 12px;
-          padding: 16px;
-          font-size: 14px;
-          background: linear-gradient(135deg, #ffdd99, #f9bf3f);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          transition: transform 0.2s ease-in-out;
-          cursor: pointer;
-      `;
-
-    // Make the card clickable by wrapping the content inside an anchor tag
-    const repoLink = document.createElement("a");
-    repoLink.href = `https://github.com/${items[i].author}/${items[i].name}`;
-    repoLink.target = "_blank";
-    repoLink.style =
-      "text-decoration: none; color: black; display: block; height: 100%;";
-
-    repoCard.appendChild(repoLink);
-
-    // Repository name
-    const repoName = document.createElement("h4");
-    repoName.className = "repo-heading";
-    repoName.innerHTML = items[i].name;
-    repoName.style = "margin: 0; font-size: 18px; font-weight: bold;";
-    repoLink.appendChild(repoName);
-
-    // Repository description
-    const repoDescription = document.createElement("p");
-    repoDescription.className = "repo-description";
-    repoDescription.innerHTML = items[i].description;
-    repoDescription.style = "margin-top: 8px; font-size: 12px; color: #555;";
-    repoLink.appendChild(repoDescription);
-
-    // Stats row (Language, Stars, Forks)
-    const statsRow = document.createElement("div");
-    statsRow.style = `
-          display: flex; 
-          align-items: center; 
-          gap: 16px; 
-          margin-top: 12px; 
-          font-size: 12px; 
-          color: #666;
-      `;
-
-    // Language
-    const languageDiv = document.createElement("div");
-    languageDiv.style = "display: flex; align-items: center; gap: 4px;";
-    languageDiv.innerHTML = `
-          <span style="width: 8px; height: 8px; background-color: #666; border-radius: 50%; display: inline-block;"></span>
-          ${items[i].language}
-      `;
-    statsRow.appendChild(languageDiv);
-
-    // Stars
-    const starsDiv = document.createElement("div");
-    starsDiv.style = "display: flex; align-items: center; gap: 4px;";
-    starsDiv.innerHTML = `
-          <img src="https://img.icons8.com/ios-filled/16/666666/star--v1.png" alt="Stars">
-          ${items[i].stars}
-      `;
-    statsRow.appendChild(starsDiv);
-
-    // Forks
-    const forksDiv = document.createElement("div");
-    forksDiv.style = "display: flex; align-items: center; gap: 4px;";
-    forksDiv.innerHTML = `
-          <img src="https://img.icons8.com/ios-filled/16/666666/code-fork.png" alt="Forks">
-          ${items[i].forks}
-      `;
-    statsRow.appendChild(forksDiv);
-
-    repoLink.appendChild(statsRow);
-
-    // Add the repo card to the row wrapper
-    rowWrapper.appendChild(repoCard);
-  }
-}
-
-function populateExp_Edu(items, id) {
-  let mainContainer = document.getElementById(id);
-
-  for (let i = 0; i < items.length; i++) {
-    let spanTimelineSublabel = document.createElement("span");
-    spanTimelineSublabel.className = "timeline-sublabel";
-    spanTimelineSublabel.innerHTML = items[i].subtitle;
-
-    let spanh2 = document.createElement("span");
-    spanh2.innerHTML = items[i].duration;
-
-    let h2TimelineLabel = document.createElement("h2");
-    h2TimelineLabel.innerHTML = items[i].title;
-    h2TimelineLabel.append(spanh2);
-
-    let divTimelineLabel = document.createElement("div");
-    divTimelineLabel.className = "timeline-label";
-    divTimelineLabel.append(h2TimelineLabel);
-    divTimelineLabel.append(spanTimelineSublabel);
-
-    for (let j = 0; j < items[i].details.length; j++) {
-      let pTimelineText = document.createElement("p");
-      pTimelineText.className = "timeline-text";
-      pTimelineText.innerHTML = "&blacksquare; " + items[i].details[j];
-      divTimelineLabel.append(pTimelineText);
-    }
-
-    let divTags = document.createElement("div");
-    for (let j = 0; j < items[i].tags.length; j++) {
-      let spanTags = document.createElement("span");
-      spanTags.className = "badge";
-      spanTags.innerHTML = items[i].tags[j];
-      divTags.append(spanTags);
-    }
-    divTimelineLabel.append(divTags);
-
-    let iFa = document.createElement("i");
-    iFa.className = "fa fa-" + items[i].icon;
-
-    let divTimelineIcon = document.createElement("div");
-    divTimelineIcon.className = "timeline-icon color-2";
-    divTimelineIcon.append(iFa);
-
-    let divTimelineEntryInner = document.createElement("div");
-    divTimelineEntryInner.className = "timeline-entry-inner";
-    divTimelineEntryInner.append(divTimelineIcon);
-    divTimelineEntryInner.append(divTimelineLabel);
-
-    let article = document.createElement("article");
-    article.className = "timeline-entry animate-box";
-    article.append(divTimelineEntryInner);
-
-    mainContainer.append(article);
-  }
-
-  let divTimelineIcon = document.createElement("div");
-  divTimelineIcon.className = "timeline-icon color-2";
-
-  let divTimelineEntryInner = document.createElement("div");
-  divTimelineEntryInner.className = "timeline-entry-inner";
-  divTimelineEntryInner.append(divTimelineIcon);
-
-  let article = document.createElement("article");
-  article.className = "timeline-entry begin animate-box";
-  article.append(divTimelineEntryInner);
-
-  mainContainer.append(article);
-}
-
-function populateLinks(items, id) {
-  let footer = document.getElementById(id);
-
-  items.forEach(function (item) {
-    if (item.label !== "copyright-text") {
-      let span = document.createElement("span");
-      span.className = "col";
-
-      let p = document.createElement("p");
-      p.className = "col-title";
-      p.innerHTML = item.label;
-      span.append(p);
-
-      let nav = document.createElement("nav");
-      nav.className = "col-list";
-
-      let ul = document.createElement("ul");
-      item.data.forEach(function (data) {
-        let li = document.createElement("li");
-        let a = document.createElement("a");
-        if (data.link) {
-          a.href = data.link;
-          a.target = "_blank";
-        }
-        if (data.func) {
-          a.setAttribute("onclick", data.func);
-        }
-        a.innerHTML = data.text;
-
-        li.append(a);
-        ul.append(li);
+            data.forEach(repo => {
+              const repoItem = document.createElement("div");
+              repoItem.classList.add("repo-box");
+              repoItem.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "No description available."}</p>
+                <a href="${repo.html_url}" target="_blank" class="repo-link">View Repository</a>
+              `;
+              reposContainer.appendChild(repoItem);
+            });
+          })
+          .catch(error => console.error("Error fetching repositories:", error));
       });
-      nav.append(ul);
-      span.append(nav);
-      footer.append(span);
-    }
-
-    if (item.label === "copyright-text") {
-      let div = document.createElement("div");
-      div.className = "copyright-text no-print";
-      item.data.forEach(function (copyright) {
-        let p = document.createElement("p");
-        p.innerHTML = copyright;
-        div.append(p);
-      });
-      footer.append(div);
-    }
-  });
-}
-
-function getElement(tagName, className) {
-  let item = document.createElement(tagName);
-  item.className = className;
-  return item;
-}
-
-function getBlogDate(publishDate) {
-  const elapsed = Date.now() - Date.parse(publishDate);
-
-  // Time conversions in milliseconds
-  const msPerSecond = 1000;
-  const msPerMinute = msPerSecond * 60;
-  const msPerHour = msPerMinute * 60;
-  const msPerDay = msPerHour * 24;
-  const msPerMonth = msPerDay * 30;
-  const msPerYear = msPerDay * 365;
-
-  if (elapsed < msPerMinute) {
-    const seconds = Math.floor(elapsed / msPerSecond);
-    return `${seconds} seconds ago`;
-  } else if (elapsed < msPerHour) {
-    const minutes = Math.floor(elapsed / msPerMinute);
-    return `${minutes} minutes ago`;
-  } else if (elapsed < msPerDay) {
-    const hours = Math.floor(elapsed / msPerHour);
-    return `${hours} hours ago`;
-  } else if (elapsed < msPerMonth) {
-    const days = Math.floor(elapsed / msPerDay);
-    return days == 1 ? `${days} day ago` : `${days} days ago`;
-  } else if (elapsed < msPerYear) {
-    const months = Math.floor(elapsed / msPerMonth);
-    return months == 1 ? `${months} month ago` : `${months} months ago`;
-  } else {
-    const years = Math.floor(elapsed / msPerYear);
-    return years == 1 ? `${years} year ago` : `${years} years ago`;
-  }
-}
-
-populateBio(bio, "bio");
-
-populateSkills(skills, "skills");
-
-fetchBlogsFromMedium(medium);
-fetchReposFromGit(gitRepo);
-fetchGitConnectedData(gitConnected);
-
-populateExp_Edu(experience, "experience");
-populateTrekking(trekking);
-populateExp_Edu(education, "education");
-
-populateLinks(footer, "footer");
+    </script>
+  </body>
+</html>
